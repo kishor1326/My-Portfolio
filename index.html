@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kishor Kumar | Electronics & Communication Engineer | AI & Robotics</title>
+  <meta name="description" content="Portfolio of Kishor Kumar, pre-final year ECE student at Prathyusha Engineering College specializing in Artificial Intelligence, Embedded Systems, Robotics (Nidar Mission - 2 Autonomous Drone), and Software Development." />
+  <meta name="keywords" content="Kishor Kumar, Robotics Engineer, ECE, Artificial Intelligence, Embedded Systems, Nidar Mission 2, Autonomous Drone, Computer Vision, Chennai" />
+  <meta name="author" content="Kishor Kumar" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kishor Kumar | AI, Robotics & ECE Portfolio" />
+  <meta property="og:description" content="Pre-final year ECE student working on Nidar Mission - 2 (Air Mouse Autonomous Drone), AI, Embedded Systems, and Software." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/kishor-kumar.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=container_flip_v1" />
+</head>
+<body>
+  <!-- Ambient Background Canvas / Glows -->
+  <div class="ambient-background" aria-hidden="true">
+    <div class="aurora-glow aurora-1"></div>
+    <div class="aurora-glow aurora-2"></div>
+    <div class="aurora-glow aurora-3"></div>
+    <div class="grid-overlay"></div>
+    <div class="radial-vignette"></div>
+  </div>
+
+  <!-- Aceternity Floating Navigation Bar -->
+  <header class="navbar-wrapper" id="navbar-wrapper">
+    <nav class="floating-nav" id="main-nav" aria-label="Main Navigation">
+      <a href="#home" class="nav-brand" aria-label="Kishor Kumar Home">
+        <span class="brand-avatar">
+          <img src="assets/kishor-kumar.jpg" alt="Kishor Kumar" />
+        </span>
+        <span class="brand-name">Kishor <span class="brand-dot"></span></span>
+      </a>
+
+      <!-- Sliding Hover Pill Indicator -->
+      <div class="nav-links" id="nav-links">
+        <div class="nav-indicator-pill" id="nav-indicator-pill"></div>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn-pill-cta">
+          <span>Let's Talk</span>
+          <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-inner">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About Me</a>
+      <a href="#education" class="mobile-nav-link">Education</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
+      <a href="#achievements" class="mobile-nav-link">Achievements</a>
+      <a href="#certificates" class="mobile-nav-link">Certificates</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <div class="mobile-drawer-socials">
+        <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/kishor-kumar-b11198329/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:Kishor132006@gmail.com" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION (REDESIGNED 2-COLUMN ACETERNITY LAYOUT) -->
+    <section id="home" class="hero-section hero-split">
+      <div class="container hero-split-container">
+        
+        <!-- Left Column: Details, Headings, CTAs & Terminal Badge -->
+        <div class="hero-left-col reveal">
+          <!-- Status Pill -->
+          <div class="hero-status-pill">
+            <span class="status-dot"></span>
+            <span class="status-pill-text">AVAILABLE FOR CONTRACTS &amp; ROLES</span>
+          </div>
+
+          <!-- Big Headline -->
+          <h1 class="hero-split-title">
+            <span class="hero-greeting">I'm</span> <span class="hero-name-gradient">Kishor Kumar</span>
+          </h1>
+
+          <!-- Aceternity Container Text Flip (Dynamic width & 3D text flip) -->
+          <div class="container-text-flip-wrapper">
+            <div class="container-text-flip" id="container-text-flip" aria-label="Specialization">
+              <span class="flip-text-inner active" id="flip-text-inner">Embedded</span>
+            </div>
+          </div>
+
+          <!-- Monospace Subtitle -->
+          <div class="hero-split-role">
+            Electronics &amp; Communication Engineer
+          </div>
+
+          <!-- Description text from user -->
+          <p class="hero-split-desc">
+            I am a pre-final year Electronics and Communication Engineering (ECE) student at <strong>Prathyusha Engineering College</strong> with a strong passion for Artificial Intelligence, Machine Learning, Embedded Systems, Robotics, and Software Development.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-split-actions">
+            <a href="#contact" class="btn-aceternity btn-gradient-connect">
+              <span>Let's Connect</span>
+            </a>
+            <a href="#projects" class="btn-aceternity btn-ghost-work">
+              <span>View My Work</span>
+            </a>
+          </div>
+
+          <!-- Social Icons (GitHub & LinkedIn in Matching White Circles) -->
+          <div class="hero-split-socials">
+            <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" class="hero-social-circle-white" aria-label="GitHub Profile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/kishor-kumar-b11198329/" target="_blank" rel="noopener noreferrer" class="hero-social-circle-white" aria-label="LinkedIn Profile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Resized Photo Card with Glass Badge -->
+        <div class="hero-right-col reveal">
+          <!-- Main Hero Photo Card with Glowing Aura -->
+          <div class="hero-photo-card-container">
+            <div class="photo-card-aura"></div>
+            <div class="hero-photo-card">
+              <div class="photo-frame-inner">
+                <img src="assets/kishor-kumar.jpg" alt="Kishor Kumar" class="hero-photo-img" style="filter: none !important; -webkit-filter: none !important;" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll Down">
+        <span class="scroll-text">SCROLL DOWN</span>
+        <svg class="scroll-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ABOUT ME & CURRENT MISSION SECTION (BENTO GRID STYLE) -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="tag-dot"></span>
+            <span>About Me</span>
+          </div>
+          <h2 class="section-title">Engineering at the Intersection of Hardware &amp; Intelligence</h2>
+          <p class="section-subtitle">Blending circuit-level hardware design with state-of-the-art AI and robotics to create real-world impact.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Spotlight Featured Card: Nidar Mission - 2 -->
+          <div class="bento-card bento-card-large spotlight-card reveal">
+            <div class="bento-card-header">
+              <div class="mission-badge">
+                <span class="radar-pulse"></span>
+                <span>Active Research &amp; Development</span>
+              </div>
+              <span class="bento-tag">Flagship Project</span>
+            </div>
+
+            <div class="bento-media-container">
+              <img src="assets/drone-nidar-mission.jpg" alt="Nidar Mission - 2 Autonomous Drone" class="bento-media-img" />
+              <div class="bento-media-overlay"></div>
+              <div class="media-telemetry-hud">
+                <div class="hud-item"><span class="hud-label">STATUS</span><span class="hud-val text-emerald">ARMED / AUTONOMOUS</span></div>
+                <div class="hud-item"><span class="hud-label">TELEMETRY</span><span class="hud-val">915MHz RF LINK</span></div>
+                <div class="hud-item"><span class="hud-label">SLAM SENSORS</span><span class="hud-val">LiDAR + STEREO CAM</span></div>
+              </div>
+            </div>
+
+            <div class="bento-card-body">
+              <h3 class="bento-card-title">Currently Working on Nidar Mission - 2: Air Mouse</h3>
+              <p class="bento-card-desc">
+                An advanced <strong>autonomous navigation drone</strong> engineered for real-time spatial mapping, vision-guided obstacle avoidance, and mission telemetry without relying on GPS in GPS-denied environments.
+              </p>
+              <div class="bento-tech-pills">
+                <span class="tech-pill">Autonomous Flight</span>
+                <span class="tech-pill">ROS 2</span>
+                <span class="tech-pill">SLAM Navigation</span>
+                <span class="tech-pill">Edge AI Computer Vision</span>
+                <span class="tech-pill">Drone Telemetry</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: Academic & Mission Statement -->
+          <div class="bento-card spotlight-card reveal">
+            <div class="card-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <h3 class="bento-card-title">Pre-Final Year ECE Engineer</h3>
+            <p class="bento-card-desc">
+              Currently studying Electronics and Communication Engineering at <strong>Prathyusha Engineering College</strong> (CGPA: 7.65), combining theoretical physics, communication protocols, signal processing, and microelectronics.
+            </p>
+            <div class="stat-row">
+              <div class="stat-item">
+                <span class="stat-number">7.65</span>
+                <span class="stat-name">Academic CGPA</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">2024-28</span>
+                <span class="stat-name">Batch Period</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 3: Deep Technical Passion -->
+          <div class="bento-card spotlight-card reveal">
+            <div class="card-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </div>
+            <h3 class="bento-card-title">Core Engineering Stack</h3>
+            <p class="bento-card-desc">
+              From low-level microcontrollers (ESP32, STM32, Arduino) to edge neural networks (YOLO, OpenCV) and modern responsive full-stack applications.
+            </p>
+            <div class="card-mini-badges">
+              <span class="mini-badge">AI / ML</span>
+              <span class="mini-badge">Embedded C++</span>
+              <span class="mini-badge">Robotics</span>
+              <span class="mini-badge">Computer Vision</span>
+              <span class="mini-badge">Web Tech</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIC FOUNDATIONS (TIMELINE SECTION) -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="tag-dot"></span>
+            <span>Education</span>
+          </div>
+          <h2 class="section-title">Academic Foundations</h2>
+          <p class="section-subtitle">Structured academic milestones shaping my engineering discipline, problem solving, and technological skills.</p>
+        </div>
+
+        <div class="aceternity-timeline">
+          <!-- Timeline Track Line -->
+          <div class="timeline-beam" id="timeline-beam"></div>
+
+          <!-- Timeline Item 1: 2024 - 2028 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-node">
+              <div class="node-ring"></div>
+              <div class="node-core"></div>
+            </div>
+            <div class="timeline-content-card spotlight-card">
+              <div class="timeline-header">
+                <span class="timeline-year-badge">2024 — 2028</span>
+                <span class="timeline-cgpa-pill">CGPA: 7.65</span>
+              </div>
+              <h3 class="timeline-degree">Bachelor of Engineering (B.E.)</h3>
+              <h4 class="timeline-institution">Prathyusha Engineering College</h4>
+              <p class="timeline-description">
+                Electronics and Communication Engineering with a strong focus on Artificial Intelligence, Machine Learning, Embedded Systems, and Robotics. Actively building startup-grade web applications, autonomous drones, and intelligent edge vision solutions.
+              </p>
+              <div class="timeline-tags">
+                <span class="edu-tag">Embedded Systems</span>
+                <span class="edu-tag">Machine Learning</span>
+                <span class="edu-tag">Robotics &amp; Control</span>
+                <span class="edu-tag">Signal Processing</span>
+                <span class="edu-tag">Edge Vision</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: 2022 - 2024 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-node">
+              <div class="node-ring"></div>
+              <div class="node-core"></div>
+            </div>
+            <div class="timeline-content-card spotlight-card">
+              <div class="timeline-header">
+                <span class="timeline-year-badge">2022 — 2024</span>
+                <span class="timeline-cgpa-pill">Completed</span>
+              </div>
+              <h3 class="timeline-degree">Higher Secondary Education (HSC)</h3>
+              <h4 class="timeline-institution">St. Paul's Matriculation Higher Secondary School</h4>
+              <p class="timeline-description">
+                Completed higher secondary and secondary education with strong academic performance in core STEM and computing subjects, cultivating deep analytical thinking and mathematical fundamentals.
+              </p>
+              <div class="timeline-tags">
+                <span class="edu-tag">STEM Mathematics</span>
+                <span class="edu-tag">Physics</span>
+                <span class="edu-tag">Computer Science</span>
+                <span class="edu-tag">Chemistry</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SHOWCASE SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="tag-dot"></span>
+            <span>Portfolio Showcase</span>
+          </div>
+          <h2 class="section-title">Featured Innovations &amp; Systems</h2>
+          <p class="section-subtitle">Showcasing autonomous robotics, computer vision, AI systems, and modern web applications.</p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filters reveal">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="robotics">Robotics &amp; Drones</button>
+          <button class="filter-btn" data-filter="ai">AI &amp; Vision</button>
+          <button class="filter-btn" data-filter="embedded">Embedded Systems</button>
+          <button class="filter-btn" data-filter="web">Web Applications</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1: Nidar Mission - 2 -->
+          <article class="project-card spotlight-card tilt-card reveal" data-category="robotics ai">
+            <div class="project-card-inner">
+              <div class="project-image-box">
+                <img src="assets/drone-nidar-mission.jpg" alt="Nidar Mission 2 Autonomous Navigation Drone" class="project-img" />
+                <div class="project-badge-overlay">
+                  <span class="status-live-dot"></span> Active Project
+                </div>
+              </div>
+              <div class="project-card-content">
+                <div class="project-cat">Autonomous Robotics &amp; Drones</div>
+                <h3 class="project-title">Nidar Mission - 2: Air Mouse</h3>
+                <p class="project-desc">
+                  An autonomous navigation drone platform designed for GPS-denied environments with onboard computer vision, LiDAR SLAM mapping, obstacle negotiation, and real-time ground control telemetry.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-chip">ROS 2</span>
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">LiDAR SLAM</span>
+                  <span class="tech-chip">PX4 / ArduPilot</span>
+                  <span class="tech-chip">OpenCV</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>View Repository</span>
+                  </a>
+                  <button class="project-details-btn" data-modal="modal-nidar" aria-label="Learn More">Details &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Edge Vision AI System -->
+          <article class="project-card spotlight-card tilt-card reveal" data-category="ai embedded">
+            <div class="project-card-inner">
+              <div class="project-image-box">
+                <img src="assets/edge-vision-ai.jpg" alt="Intelligent Edge Vision System" class="project-img" />
+                <div class="project-badge-overlay">
+                  <span class="status-live-dot dot-blue"></span> AI Research
+                </div>
+              </div>
+              <div class="project-card-content">
+                <div class="project-cat">Artificial Intelligence &amp; Vision</div>
+                <h3 class="project-title">Intelligent Edge Vision &amp; Target Tracker</h3>
+                <p class="project-desc">
+                  Real-time edge neural inference pipeline capable of tracking moving targets, pedestrian detection, and obstacle classification at 60 FPS on compact embedded processing units.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-chip">YOLOv8</span>
+                  <span class="tech-chip">OpenCV</span>
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">TensorFlow Lite</span>
+                  <span class="tech-chip">Edge TPU</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>View Repository</span>
+                  </a>
+                  <button class="project-details-btn" data-modal="modal-vision" aria-label="Learn More">Details &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Embedded Robotics & Telemetry Hardware -->
+          <article class="project-card spotlight-card tilt-card reveal" data-category="embedded robotics">
+            <div class="project-card-inner">
+              <div class="project-image-box">
+                <img src="assets/embedded-robotics.jpg" alt="Autonomous Robotics & Embedded Telemetry" class="project-img" />
+                <div class="project-badge-overlay">
+                  <span class="status-live-dot dot-purple"></span> Hardware Prototyping
+                </div>
+              </div>
+              <div class="project-card-content">
+                <div class="project-cat">Embedded Systems &amp; Hardware</div>
+                <h3 class="project-title">Autonomous Robotics &amp; Telemetry Hub</h3>
+                <p class="project-desc">
+                  Microcontroller-driven sensor fusion hub integrating IMU, GPS, ultrasound, and wireless telemetry transceivers with custom PCB layout and low-latency motor control loops.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-chip">Embedded C++</span>
+                  <span class="tech-chip">ESP32 / STM32</span>
+                  <span class="tech-chip">UART / I2C / SPI</span>
+                  <span class="tech-chip">FreeRTOS</span>
+                  <span class="tech-chip">Sensor Fusion</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>View Repository</span>
+                  </a>
+                  <button class="project-details-btn" data-modal="modal-embedded" aria-label="Learn More">Details &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Startup-Grade AI Web Application -->
+          <article class="project-card spotlight-card tilt-card reveal" data-category="web ai">
+            <div class="project-card-inner">
+              <div class="project-web-preview">
+                <div class="preview-browser-bar">
+                  <span class="preview-dot dot-red"></span>
+                  <span class="preview-dot dot-yellow"></span>
+                  <span class="preview-dot dot-green"></span>
+                  <span class="preview-url">kishor-ai-suite.dev</span>
+                </div>
+                <div class="preview-code-mock">
+                  <div class="code-line"><span class="c-purple">const</span> <span class="c-blue">droneTelemetry</span> = <span class="c-purple">await</span> <span class="c-yellow">connectFlightCore</span>();</div>
+                  <div class="code-line"><span class="c-green">// Realtime AI Telemetry &amp; Vision HUD</span></div>
+                  <div class="code-line"><span class="c-blue">droneTelemetry</span>.<span class="c-yellow">stream</span>({ <span class="c-orange">fps</span>: <span class="c-cyan">60</span>, <span class="c-orange">slam</span>: <span class="c-purple">true</span> });</div>
+                  <div class="preview-sparkle">✦ SYSTEM ONLINE</div>
+                </div>
+              </div>
+              <div class="project-card-content">
+                <div class="project-cat">Modern Web Applications</div>
+                <h3 class="project-title">Startup-Grade AI &amp; Telemetry Web Suite</h3>
+                <p class="project-desc">
+                  Responsive full-stack dashboard for monitoring autonomous drone telemetry, real-time spatial positioning, and live streaming AI detections with animated modern UX.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-chip">JavaScript (ES6+)</span>
+                  <span class="tech-chip">Modern CSS3</span>
+                  <span class="tech-chip">WebSockets</span>
+                  <span class="tech-chip">Chart.js / Telemetry</span>
+                  <span class="tech-chip">Node.js API</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="GitHub Repository">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>View Repository</span>
+                  </a>
+                  <button class="project-details-btn" data-modal="modal-web" aria-label="Learn More">Details &rarr;</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & TECHNOLOGIES SECTION -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="tag-dot"></span>
+            <span>Technical Capabilities</span>
+          </div>
+          <h2 class="section-title">Skills &amp; Technologies</h2>
+          <p class="section-subtitle">Proficiencies acquired across hardware, autonomous intelligence, and software engineering.</p>
+        </div>
+
+        <div class="skills-categories-grid">
+          <!-- Skill Card 1: AI & ML -->
+          <div class="skill-category-card spotlight-card reveal">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon icon-ai">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V18a1 1 0 0 1-2 0v-1.07A7 7 0 0 1 5.07 11H6a1 1 0 0 1 0-2h-.93A7 7 0 0 1 11 5.07V6a1 1 0 0 1 2 0v-.93A7 7 0 0 1 18.93 11H18a1 1 0 0 1 0 2h.93A7 7 0 0 1 13 16.93z"/></svg>
+              </div>
+              <h3 class="skill-cat-title">AI &amp; Machine Learning</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-pill"><span>Python</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>TensorFlow / Keras</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>OpenCV Computer Vision</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>YOLO Object Detection</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>PyTorch Fundamentals</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Edge AI &amp; TFLite</span><span class="pill-dot"></span></div>
+            </div>
+          </div>
+
+          <!-- Skill Card 2: Embedded Systems & Robotics -->
+          <div class="skill-category-card spotlight-card reveal">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon icon-robotics">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4M8 15h.01M16 15h.01"></path></svg>
+              </div>
+              <h3 class="skill-cat-title">Embedded Systems &amp; Robotics</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-pill"><span>Embedded C / C++</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>ESP32 &amp; Arduino</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>ROS / ROS 2 Basics</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Drone Flight Telemetry</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Sensor Fusion (IMU/LiDAR)</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>UART, SPI, I2C, PWM</span><span class="pill-dot"></span></div>
+            </div>
+          </div>
+
+          <!-- Skill Card 3: Software & Web Development -->
+          <div class="skill-category-card spotlight-card reveal">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon icon-web">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3 class="skill-cat-title">Software &amp; Web Development</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-pill"><span>JavaScript (ES6+)</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>HTML5 &amp; Modern CSS3</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Responsive UI / UX</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>RESTful API Integration</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Git &amp; GitHub</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Node.js Basics</span><span class="pill-dot"></span></div>
+            </div>
+          </div>
+
+          <!-- Skill Card 4: Hardware Prototyping & Tools -->
+          <div class="skill-category-card spotlight-card reveal">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon icon-tools">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              </div>
+              <h3 class="skill-cat-title">Hardware Tools &amp; Prototyping</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-pill"><span>PCB Schematic &amp; Layout</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Oscilloscope &amp; Multimeter</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Linux / Bash Shell</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Microcontroller Debugging</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Quadrotor Tuning</span><span class="pill-dot"></span></div>
+              <div class="skill-pill"><span>Rapid Breadboard Testing</span><span class="pill-dot"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENT HIGHLIGHTS SECTION -->
+    <section id="achievements" class="section achievements-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="tag-dot"></span>
+            <span>Honors &amp; Recognition</span>
+          </div>
+          <h2 class="section-title">Achievement Highlights</h2>
+          <p class="section-subtitle">National hackathons, research awards, and verified technical distinctions.</p>
+        </div>
+
+        <!-- Aceternity Achievement Cards & Dedicated Customizable Space -->
+        <div class="achievements-grid">
+          <!-- Achievement 1 -->
+          <div class="achievement-card spotlight-card reveal">
+            <div class="achievement-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <div class="achievement-content">
+              <div class="achievement-meta">
+                <span class="achievement-badge">Autonomous Systems</span>
+                <span class="achievement-date">Ongoing 2026</span>
+              </div>
+              <h3 class="achievement-title">Nidar Mission - 2: Autonomous Flight Milestone</h3>
+              <p class="achievement-desc">
+                Spearheading the autonomous navigation and obstacle avoidance firmware for the Air Mouse drone initiative at Prathyusha Engineering College.
+              </p>
+            </div>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="achievement-card spotlight-card reveal">
+            <div class="achievement-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div class="achievement-content">
+              <div class="achievement-meta">
+                <span class="achievement-badge">National Level</span>
+                <span class="achievement-date">Hackathons &amp; Events</span>
+              </div>
+              <h3 class="achievement-title">National Technical Hackathons &amp; Contests</h3>
+              <p class="achievement-desc">
+                Active participant in collegiate and inter-state technical hackathons focused on AI, edge computing, smart robotics, and IoT sensor networks.
+              </p>
+            </div>
+          </div>
+
+          <!-- Achievement 3: Customizable Space As Requested by User -->
+          <div class="achievement-card achievement-placeholder spotlight-card reveal">
+            <div class="placeholder-icon-ring">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="achievement-content">
+              <div class="achievement-meta">
+                <span class="achievement-badge badge-draft">Custom Slot</span>
+                <span class="achievement-date">Ready to Update</span>
+              </div>
+              <h3 class="achievement-title">Upcoming Honors &amp; Research Publications</h3>
+              <p class="achievement-desc">
+                Dedicated container space reserved for adding new national competition awards, journal papers, patent filings, or verified project wins.
+              </p>
+              <div class="placeholder-tip">Tip: Simply edit this card in <code>index.html</code> to add your new accomplishments!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & PROFESSIONAL LICENSES SECTION -->
+    <!-- As requested: "Four row Of container for add the Certificates so Just Leave Some space Just add the Container For adding the certificates in row of four" -->
+    <section id="certificates" class="section certificates-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="tag-dot"></span>
+            <span>Credentials</span>
+          </div>
+          <h2 class="section-title">Certifications &amp; Professional Licenses</h2>
+          <p class="section-subtitle">Verified professional specializations, industry-standard training courses, and competitive honors.</p>
+        </div>
+
+        <!-- 4-Container Row Grid (Desktop 4 Columns, Responsive on Mobile) -->
+        <div class="certificates-row-grid">
+          <!-- Certificate Container 1 -->
+          <div class="cert-card spotlight-card reveal">
+            <div class="cert-card-top">
+              <div class="cert-badge-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="13" y2="12"/><circle cx="15" cy="15" r="2"/></svg>
+              </div>
+              <span class="cert-index">01</span>
+            </div>
+            <div class="cert-body">
+              <span class="cert-tag">Embedded Systems</span>
+              <h3 class="cert-title">Embedded Systems &amp; Microcontroller Architecture</h3>
+              <p class="cert-issuer">Verified Specialization / Training</p>
+              <p class="cert-summary">Microcontroller programming, GPIO, interrupts, timers, and communication protocols for IoT and robotics.</p>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-status status-verified">✓ Verified Course</span>
+              <a href="#contact" class="cert-verify-link">View Certificate &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Certificate Container 2 -->
+          <div class="cert-card spotlight-card reveal">
+            <div class="cert-card-top">
+              <div class="cert-badge-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <span class="cert-index">02</span>
+            </div>
+            <div class="cert-body">
+              <span class="cert-tag">Artificial Intelligence</span>
+              <h3 class="cert-title">Machine Learning &amp; Computer Vision Professional</h3>
+              <p class="cert-issuer">Industry Standard Certification</p>
+              <p class="cert-summary">Supervised learning, deep neural networks, image classification, object tracking, and edge deployment.</p>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-status status-verified">✓ Verified Course</span>
+              <a href="#contact" class="cert-verify-link">View Certificate &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Certificate Container 3 -->
+          <div class="cert-card spotlight-card reveal">
+            <div class="cert-card-top">
+              <div class="cert-badge-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <span class="cert-index">03</span>
+            </div>
+            <div class="cert-body">
+              <span class="cert-tag">Autonomous Systems</span>
+              <h3 class="cert-title">Robotics &amp; Autonomous Navigation Protocols</h3>
+              <p class="cert-issuer">Technical Workshop / Honors</p>
+              <p class="cert-summary">Sensor fusion, PID motor controllers, drone flight dynamics, and kinematics for autonomous navigation.</p>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-status status-verified">✓ Verified Course</span>
+              <a href="#contact" class="cert-verify-link">View Certificate &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Certificate Container 4 -->
+          <div class="cert-card cert-card-add spotlight-card reveal">
+            <div class="cert-card-top">
+              <div class="cert-badge-icon icon-add">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </div>
+              <span class="cert-index">04</span>
+            </div>
+            <div class="cert-body">
+              <span class="cert-tag tag-slot">Certificate Slot #4</span>
+              <h3 class="cert-title">Professional Certification / License Slot</h3>
+              <p class="cert-issuer">Available for New Certificate</p>
+              <p class="cert-summary">Ready container: simply insert your credential title, issuing provider (NPTEL, Coursera, IEEE, etc.), and credential URL.</p>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-status status-slot">○ Available Slot</span>
+              <span class="cert-slot-text">Ready to Edit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GET IN TOUCH / CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag">
+            <span class="tag-dot"></span>
+            <span>Get In Touch</span>
+          </div>
+          <h2 class="section-title">Let's Connect &amp; Collaborate</h2>
+          <p class="section-subtitle">Have a project, internship opportunity, robotics challenge, or question? Send a message or reach out directly.</p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Contact Cards Column -->
+          <div class="contact-info-col reveal">
+            <div class="contact-info-card spotlight-card">
+              <h3 class="contact-card-title">Contact Information</h3>
+
+              <div class="contact-details-list">
+                <!-- Email -->
+                <div class="contact-detail-item">
+                  <div class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div class="detail-meta">
+                    <span class="detail-label">Email Address</span>
+                    <a href="mailto:Kishor132006@gmail.com" class="detail-value">Kishor132006@gmail.com</a>
+                  </div>
+                  <button class="detail-action-btn copy-btn-small" data-copy="Kishor132006@gmail.com" title="Copy Email">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-detail-item">
+                  <div class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div class="detail-meta">
+                    <span class="detail-label">Phone Number</span>
+                    <a href="tel:6385502305" class="detail-value">+91 6385502305</a>
+                  </div>
+                  <button class="detail-action-btn copy-btn-small" data-copy="6385502305" title="Copy Phone">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </div>
+
+                <!-- Location -->
+                <div class="contact-detail-item">
+                  <div class="detail-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div class="detail-meta">
+                    <span class="detail-label">Location</span>
+                    <span class="detail-value">Chennai, Tamil Nadu, India</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Connect Elsewhere (Only GitHub & LinkedIn Logos with Direct Redirect) -->
+              <div class="connect-elsewhere-block">
+                <span class="connect-title">Connect elsewhere</span>
+                <div class="connect-social-logos">
+                  <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" class="contact-social-logo-btn contact-github-btn" aria-label="GitHub Profile" title="Visit GitHub (@kishor1326)">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                  <a href="https://www.linkedin.com/in/kishor-kumar-b11198329/" target="_blank" rel="noopener noreferrer" class="contact-social-logo-btn contact-linkedin-btn" aria-label="LinkedIn Profile" title="Visit LinkedIn (Kishor Kumar)">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form: "Send a message" -->
+          <div class="contact-form-col reveal">
+            <div class="contact-form-card spotlight-card">
+              <h3 class="contact-card-title">Send a message</h3>
+              <p class="contact-card-desc">Drop me a note below and I will get back to you as soon as possible.</p>
+
+              <form id="contact-form" class="contact-form" action="mailto:Kishor132006@gmail.com" method="POST" enctype="text/plain">
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label for="sender-name">Your Name</label>
+                    <div class="input-wrapper">
+                      <input type="text" id="sender-name" name="name" placeholder="e.g. John Doe" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="sender-email">Your Email</label>
+                    <div class="input-wrapper">
+                      <input type="email" id="sender-email" name="email" placeholder="e.g. john@example.com" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="message-subject">Subject</label>
+                  <div class="input-wrapper">
+                    <input type="text" id="message-subject" name="subject" placeholder="e.g. Robotics Collaboration / Opportunity" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="message-text">Message</label>
+                  <div class="input-wrapper">
+                    <textarea id="message-text" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                  </div>
+                </div>
+
+                <!-- Aceternity Border Magic Button -->
+                <button type="submit" class="border-magic-btn" id="submit-btn">
+                  <span class="border-magic-spinner"></span>
+                  <span class="border-magic-content">
+                    <span id="submit-text">Send Message</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  </span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER: Centered Footer With Logo (Aceternity UI) -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <!-- Centered Logo & Nav Area -->
+      <div class="footer-centered-top">
+        <a href="#home" class="footer-centered-brand" aria-label="Kishor Kumar Home">
+          <div class="footer-logo-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 3h3.5v7.2L14.7 3H19l-8.5 9.2L20 21h-4.3l-6.2-7.5L7.5 15.6V21H4V3z"/>
+            </svg>
+          </div>
+          <span class="footer-brand-title">Kishor Kumar</span>
+        </a>
+
+        <!-- Horizontal Navigation Links -->
+        <nav class="footer-nav-centered" aria-label="Footer Navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Horizontal Grid / Divider Line -->
+      <div class="footer-divider-grid" aria-hidden="true"></div>
+
+      <!-- Bottom Section: Copyright & Social Icons -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">
+          &copy; <span id="current-year">2026</span> Kishor Kumar. All rights reserved.
+        </p>
+
+        <div class="footer-social-icons">
+          <a href="https://www.linkedin.com/in/kishor-kumar-b11198329/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn Profile" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="GitHub Profile" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="mailto:Kishor132006@gmail.com" class="footer-social-icon" aria-label="Send Email" title="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="https://www.instagram.com/x_kishor_x1?rpxt=MWw1ODM2M2doeW9iaA==" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram Profile" title="Instagram (@x_kishor_x1)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Popups for Projects -->
+  <div class="modal-overlay" id="project-modal" aria-hidden="true">
+    <div class="modal-card spotlight-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Dynamically injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js?v=container_flip_v1"></script>
+</body>
+</html>
