@@ -6,11 +6,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initContainerTextFlip();
-  initSpotlightEffect();
-  initTiltCards();
   initScrollReveal();
   initProjectFilters();
   initProjectModals();
+  initCertificatesTabs();
+  initCertificatesShowMore();
+  initCertificateModalEvents();
   initCopyActions();
   initContactForm();
   initLiveClock();
@@ -224,54 +225,7 @@ function initContainerTextFlip() {
 }
 
 /* ==========================================================================
-   2. ACETERNITY SPOTLIGHT EFFECT
-   Calculates mouse coordinates over cards and updates CSS variables
-   ========================================================================== */
-function initSpotlightEffect() {
-  const cards = document.querySelectorAll('.spotlight-card');
-
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  });
-}
-
-/* ==========================================================================
-   3. 3D TILT EFFECT FOR PROJECT CARDS
-   ========================================================================== */
-function initTiltCards() {
-  const tiltCards = document.querySelectorAll('.tilt-card');
-
-  tiltCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      // Small subtle angle (max 5 degrees)
-      const rotateX = ((y - centerY) / centerY) * -4;
-      const rotateY = ((x - centerX) / centerX) * 4;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-    });
-  });
-}
-
-/* ==========================================================================
-   4. SCROLL REVEAL ANIMATIONS
+   2. SCROLL REVEAL ANIMATIONS
    ========================================================================== */
 function initScrollReveal() {
   const reveals = document.querySelectorAll('.reveal');
@@ -617,3 +571,197 @@ function updateCurrentYear() {
     yearEl.textContent = new Date().getFullYear();
   }
 }
+
+/* ==========================================================================
+   12. CERTIFICATIONS TABS & SHOW MORE INTERACTION
+   ========================================================================== */
+function switchCertTab(targetId) {
+  const tabButtons = document.querySelectorAll('.cert-tab-btn');
+  const tabPanes = document.querySelectorAll('.cert-tab-pane');
+
+  tabButtons.forEach(btn => {
+    if (btn.getAttribute('data-tab') === targetId) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  tabPanes.forEach(pane => {
+    if (pane.id === targetId) {
+      pane.classList.add('active');
+      pane.style.opacity = '0';
+      pane.style.transform = 'translateY(12px)';
+      requestAnimationFrame(() => {
+        pane.style.transition = 'opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+        pane.style.opacity = '1';
+        pane.style.transform = 'translateY(0)';
+      });
+    } else {
+      pane.classList.remove('active');
+    }
+  });
+}
+window.switchCertTab = switchCertTab;
+
+let lastShowMoreToggleTime = 0;
+function toggleCertificatesShowMore(e) {
+  if (e) {
+    if (e.preventDefault) e.preventDefault();
+    if (e.stopPropagation) e.stopPropagation();
+  }
+
+  const now = Date.now();
+  if (now - lastShowMoreToggleTime < 250) {
+    return; // Prevent duplicate rapid firing
+  }
+  lastShowMoreToggleTime = now;
+
+  const showMoreBtn = document.getElementById('cert-show-more-btn');
+  const otherGrid = document.querySelector('.cert-other-grid');
+  if (!showMoreBtn || !otherGrid) return;
+
+  const willExpand = !otherGrid.classList.contains('is-expanded');
+
+  if (willExpand) {
+    otherGrid.classList.add('is-expanded');
+    showMoreBtn.setAttribute('data-expanded', 'true');
+    showMoreBtn.textContent = 'SHOW LESS';
+  } else {
+    otherGrid.classList.remove('is-expanded');
+    showMoreBtn.setAttribute('data-expanded', 'false');
+    showMoreBtn.textContent = 'SHOW MORE (14 MORE)';
+    const otherPane = document.getElementById('tab-other');
+    if (otherPane) {
+      otherPane.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+}
+window.toggleCertificatesShowMore = toggleCertificatesShowMore;
+
+function initCertificatesTabs() {
+  const tabButtons = document.querySelectorAll('.cert-tab-btn');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-tab');
+      if (targetId) switchCertTab(targetId);
+    });
+  });
+}
+
+function initCertificatesShowMore() {
+  const showMoreBtn = document.getElementById('cert-show-more-btn');
+  if (showMoreBtn) {
+    showMoreBtn.onclick = toggleCertificatesShowMore;
+  }
+}
+
+/* ==========================================================================
+   13. IN-SITE CERTIFICATE VIEWER MODAL (PURE LIGHTBOX)
+   ========================================================================== */
+function openCertificateModal({ src, title }) {
+  const modal = document.getElementById('cert-viewer-modal');
+  if (!modal) return;
+
+  const viewport = document.getElementById('cert-modal-viewport');
+
+  if (viewport) {
+    viewport.innerHTML = '';
+    const isPdf = src.toLowerCase().includes('.pdf');
+
+    if (isPdf) {
+      const iframe = document.createElement('iframe');
+      iframe.className = 'cert-modal-pdf';
+      iframe.src = `${src}#toolbar=0&navpanes=0&scrollbar=1`;
+      iframe.title = title || 'Certificate PDF Viewer';
+      viewport.appendChild(iframe);
+    } else {
+      const img = document.createElement('img');
+      img.className = 'cert-modal-img';
+      img.src = src;
+      img.alt = title || 'Certificate Image Viewer';
+      viewport.appendChild(img);
+    }
+  }
+
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+window.openCertificateModal = openCertificateModal;
+
+function closeCertificateModal() {
+  const modal = document.getElementById('cert-viewer-modal');
+  if (!modal) return;
+
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+
+  const viewport = document.getElementById('cert-modal-viewport');
+  if (viewport) {
+    viewport.innerHTML = '';
+  }
+}
+window.closeCertificateModal = closeCertificateModal;
+
+function initCertificateModalEvents() {
+  const modal = document.getElementById('cert-viewer-modal');
+  const closeBtn = document.getElementById('cert-modal-close-btn');
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeCertificateModal();
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      // Close if clicking outside the image / pdf viewer
+      if (e.target === modal || e.target.classList.contains('cert-modal-lightbox') || e.target.classList.contains('cert-modal-viewport')) {
+        closeCertificateModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const m = document.getElementById('cert-viewer-modal');
+      if (m && m.classList.contains('active')) {
+        closeCertificateModal();
+      }
+    }
+  });
+
+  // Attach click listener for all certificate view triggers & banners
+  document.addEventListener('click', (e) => {
+    const banner = e.target.closest('.cert-spec-banner');
+    let trigger = e.target.closest('.cert-view-trigger, .btn-cert-primary, .cert-other-card');
+
+    if (banner && !trigger) {
+      trigger = banner.closest('.cert-spec-card')?.querySelector('.cert-view-trigger, .btn-cert-primary');
+    }
+
+    if (!trigger) return;
+
+    // Ignore clicks on download links or secondary actions
+    if (e.target.closest('.btn-cert-secondary') || e.target.closest('a[download]')) {
+      return;
+    }
+
+    const src = trigger.getAttribute('data-cert-src') || trigger.getAttribute('href');
+    if (!src || src.startsWith('#')) return;
+
+    e.preventDefault();
+
+    const card = trigger.closest('.cert-spec-card, .cert-other-card');
+    const title = trigger.getAttribute('data-cert-title') ||
+                  card?.querySelector('.cert-spec-title, .cert-other-title')?.textContent?.trim() ||
+                  'Certificate';
+
+    openCertificateModal({ src, title });
+  });
+}
+
+
