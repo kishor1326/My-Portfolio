@@ -14,15 +14,24 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/kishor-kumar.jpg" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Geist Sans, Geist Mono, Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=cert_reduced_glow_v8" />
+  <link rel="stylesheet" href="style.css?v=hero_inline_socials_v22" />
 </head>
 <body>
+
+  <!-- Minimal Animated Arrow Cursor (Curzr Arrow Pointer) -->
+  <div class="curzr-arrow" id="curzr-arrow" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+      <path class="inner" d="M25,30a5.82,5.82,0,0,1-1.09-.17l-.2-.07-7.36-3.48a.72.72,0,0,0-.35-.08.78.78,0,0,0-.33.07L8.24,29.54a.66.66,0,0,1-.2.06,5.17,5.17,0,0,1-1,.15,3.6,3.6,0,0,1-3.29-5L12.68,4.2a3.59,3.59,0,0,1,6.58,0l9,20.74A3.6,3.6,0,0,1,25,30Z" fill="#F8FAFC" />
+      <path class="outer" d="M16,3A2.59,2.59,0,0,1,18.34,4.6l9,20.74A2.59,2.59,0,0,1,25,29a5.42,5.42,0,0,1-.86-.15l-7.37-3.48a1.84,1.84,0,0,0-.77-.17,1.69,1.69,0,0,0-.73.16l-7.4,3.31a5.89,5.89,0,0,1-.79.12,2.59,2.59,0,0,1-2.37-3.62L13.6,4.6A2.58,2.58,0,0,1,16,3m0-2h0A4.58,4.58,0,0,0,11.76,3.8L2.84,24.33A4.58,4.58,0,0,0,7,30.75a6.08,6.08,0,0,0,1.21-.17,1.87,1.87,0,0,0,.4-.13L16,27.18l7.29,3.44a1.64,1.64,0,0,0,.39.14A6.37,6.37,0,0,0,25,31a4.59,4.59,0,0,0,4.21-6.41l-9-20.75A4.62,4.62,0,0,0,16,1Z" fill="#09090B" />
+    </svg>
+  </div>
+
   <!-- Ambient Background Canvas / Glows -->
   <div class="ambient-background" aria-hidden="true">
     <div class="aurora-glow aurora-1"></div>
@@ -128,7 +137,7 @@
             I am a pre-final year Electronics and Communication Engineering (ECE) student at <strong>Prathyusha Engineering College</strong> with a strong passion for Artificial Intelligence, Machine Learning, Embedded Systems, Robotics, and Software Development.
           </p>
 
-          <!-- Action Buttons -->
+          <!-- Action Buttons & Social Icons Inline -->
           <div class="hero-split-actions">
             <a href="#contact" class="btn-aceternity btn-gradient-connect">
               <span>Let's Connect</span>
@@ -136,20 +145,18 @@
             <a href="#projects" class="btn-aceternity btn-ghost-work">
               <span>View My Work</span>
             </a>
-          </div>
-
-          <!-- Social Icons (GitHub & LinkedIn in Matching White Circles) -->
-          <div class="hero-split-socials">
-            <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" class="hero-social-circle-white" aria-label="GitHub Profile">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/kishor-kumar-b11198329/" target="_blank" rel="noopener noreferrer" class="hero-social-circle-white" aria-label="LinkedIn Profile">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
+            <div class="hero-split-socials">
+              <a href="https://github.com/kishor1326/" target="_blank" rel="noopener noreferrer" class="hero-social-circle-white" aria-label="GitHub Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/kishor-kumar-b11198329/" target="_blank" rel="noopener noreferrer" class="hero-social-circle-white" aria-label="LinkedIn Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -169,10 +176,139 @@
       </div>
 
       <!-- Scroll Down Indicator -->
-      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll Down">
+      <a href="#hackathon-win" class="hero-scroll-indicator" aria-label="Scroll Down">
         <span class="scroll-text">SCROLL DOWN</span>
         <svg class="scroll-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
       </a>
+    </section>
+
+    <!-- =========================================================================
+         MY FIRST HACKATHON WIN SPOTLIGHT SECTION (MINIMAL REDESIGN)
+         ========================================================================= -->
+    <section id="hackathon-win" class="section hackathon-win-section">
+      <div class="container">
+        
+        <div class="hackathon-win-card">
+          <div class="hackathon-win-layout">
+            
+            <!-- Left Column: Aceternity Wobble Card Photo Showcase -->
+            <div class="hackathon-media-col">
+              
+              <!-- Jelly Wobble Card Container (Pure Photo on Border, No Dot Grid) -->
+              <div 
+                class="hackathon-wobble-card cert-view-trigger" 
+                id="hackathon-wobble-card" 
+                data-wobble="true"
+                data-cert-src="assets/hackathon-win.jpg"
+                data-cert-title="Eco-Innovate 2026 - Team Hack Hawks Award Ceremony"
+                role="button"
+                tabindex="0"
+                aria-label="View Full Award Photo"
+              >
+                <div class="hackathon-photo-frame wobble-inner-content">
+                  <img 
+                    src="assets/hackathon-win.jpg" 
+                    alt="Eco-Innovate Hackathon 2026 1st Place Win - Team Hack Hawks" 
+                    class="hackathon-photo-img" 
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <!-- Caption Tag positioned BELOW photo as requested -->
+              <div class="hackathon-photo-footer">
+                <div class="hackathon-photo-pill">
+                  <span class="photo-pill-dot"></span>
+                  <span>BNMIT · Eco-Innovate 2026</span>
+                </div>
+                <span class="hackathon-photo-subhint">1st Prize Award Ceremony</span>
+              </div>
+
+            </div>
+
+            <!-- Right Column: Content -->
+            <div class="hackathon-content-col">
+              
+              <!-- Eyebrow & Award Status -->
+              <div class="hackathon-meta-header">
+                <div class="hackathon-pill-tag">
+                  <span class="pill-status-dot"></span>
+                  <span>Hackathon Spotlight</span>
+                </div>
+                <div class="hackathon-trophy-tag">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <span>1st Place Winner</span>
+                </div>
+              </div>
+
+              <!-- Main Heading & Subtitle -->
+              <h2 class="hackathon-heading">My First Hackathon Win</h2>
+              <p class="hackathon-subtitle">
+                Eco-Innovate Hackathon 2026 · Smart Krishi Theme
+              </p>
+
+              <!-- Refined Narrative -->
+              <p class="hackathon-desc">
+                Representing <strong>Team Hack Hawks</strong> at B.N.M. Institute of Technology (BNMIT), Bengaluru, organized in association with <strong>MathWorks</strong> and <strong>CoreEL Technologies</strong>. We developed an innovative technological solution for agriculture, securing <strong>1st Place</strong> in the Smart Krishi category and turning ideas into impactful engineering.
+              </p>
+
+              <!-- Minimal Spec Grid -->
+              <div class="hackathon-specs-grid">
+                <div class="spec-cell">
+                  <span class="spec-label">Team</span>
+                  <span class="spec-val">Hack Hawks</span>
+                </div>
+                <div class="spec-cell">
+                  <span class="spec-label">Theme</span>
+                  <span class="spec-val">Smart Krishi</span>
+                </div>
+                <div class="spec-cell">
+                  <span class="spec-label">Institution</span>
+                  <span class="spec-val">BNMIT, Bengaluru</span>
+                </div>
+                <div class="spec-cell">
+                  <span class="spec-label">Partners</span>
+                  <span class="spec-val">MathWorks · CoreEL</span>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="hackathon-tags-wrap">
+                <span class="hackathon-tag">Hackathon</span>
+                <span class="hackathon-tag">AgriTech</span>
+                <span class="hackathon-tag">Smart Agriculture</span>
+                <span class="hackathon-tag">Innovation</span>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="hackathon-actions">
+                <a 
+                  href="Certifications%20%26%20Professional%20Licenses/SPECIALIZATIONS%20%26%20COURSES/Eco%20innovate.jpeg" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="btn-cert-primary cert-view-trigger hackathon-view-cert-btn" 
+                  data-cert-title="Eco-Innovate 2026 Certificate - 1st Place Smart Krishi"
+                  aria-label="View Certificate"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <span>View Certificate</span>
+                </a>
+                <a 
+                  href="assets/hackathon-win.jpg" 
+                  class="hackathon-ghost-btn cert-view-trigger" 
+                  data-cert-title="Eco-Innovate 2026 - Team Hack Hawks Award Ceremony"
+                  aria-label="View Award Photo"
+                >
+                  <span>View Photo</span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- ABOUT ME & CURRENT MISSION SECTION (BENTO GRID STYLE) -->
@@ -1239,6 +1375,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <!-- JavaScript -->
-  <script src="script.js?v=cert_reduced_glow_v8"></script>
+  <script src="script.js?v=curzr_arrow_v20"></script>
 </body>
 </html>
+

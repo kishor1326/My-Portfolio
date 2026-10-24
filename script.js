@@ -3,6 +3,18 @@
  * Handles Spotlight effect, 3D Tilt, Scroll Reveals, Timeline, Project Modals, and Forms.
  */
 
+// Register custom property for Aceternity Hover Border Gradient animation
+if (window.CSS && CSS.registerProperty) {
+  try {
+    CSS.registerProperty({
+      name: '--border-angle',
+      syntax: '<angle>',
+      inherits: false,
+      initialValue: '0deg',
+    });
+  } catch (e) {}
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initContainerTextFlip();
@@ -16,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initLiveClock();
   initBackToTop();
+  initWobbleCards();
+  new CurzrArrowPointer();
   updateCurrentYear();
 });
 
@@ -745,6 +759,14 @@ function initCertificateModalEvents() {
 
     if (!trigger) return;
 
+    // Trigger minimal click pulse animation on hackathon-view-cert-btn
+    if (trigger.classList.contains('hackathon-view-cert-btn')) {
+      trigger.classList.remove('btn-click-pulse');
+      void trigger.offsetWidth;
+      trigger.classList.add('btn-click-pulse');
+      setTimeout(() => trigger.classList.remove('btn-click-pulse'), 380);
+    }
+
     // Ignore clicks on download links or secondary actions
     if (e.target.closest('.btn-cert-secondary') || e.target.closest('a[download]')) {
       return;
@@ -764,4 +786,193 @@ function initCertificateModalEvents() {
   });
 }
 
+/* ==========================================================================
+   14. WOBBLE CARD - JELLY HOVER PHYSICS
+   Reference: https://webdevpuneet.com/ui-snippets/wobble-card/
+   Squishes and follows pointer like soft jelly with counter-parallax,
+   then springs back with custom spring easing. Zero dot-grid.
+   ========================================================================== */
+function initWobbleCards() {
+  const cards = document.querySelectorAll('[data-wobble="true"], .hackathon-wobble-card');
+  if (!cards.length) return;
 
+  cards.forEach(card => {
+    const inner = card.querySelector('.wobble-inner-content') || card.querySelector('.hackathon-photo-frame');
+    let isHovering = false;
+
+    function handlePointerEnter() {
+      isHovering = true;
+      card.style.transition = 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease';
+      if (inner) inner.style.transition = 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)';
+    }
+
+    function handlePointerMove(e) {
+      if (!isHovering) isHovering = true;
+
+      const rect = card.getBoundingClientRect();
+      const width = rect.width;
+      const height = rect.height;
+
+      // Calculate pointer position relative to center (-0.5 to 0.5)
+      const x = (e.clientX - rect.left) / width - 0.5;
+      const y = (e.clientY - rect.top) / height - 0.5;
+
+      // Minimal, subtle multipliers for an ultra-clean, refined micro-wobble
+      const moveX = x * 7;
+      const moveY = y * 7;
+      const rotateX = -y * 7;
+      const rotateY = x * 7;
+
+      // Outer card subtle micro-tilt
+      card.style.transform = `translate3d(${moveX.toFixed(2)}px, ${moveY.toFixed(2)}px, 0) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+
+      // Inner image gentle counter-parallax
+      if (inner) {
+        inner.style.transform = `translate3d(${(-moveX * 0.45).toFixed(2)}px, ${(-moveY * 0.45).toFixed(2)}px, 0) scale(1.02)`;
+      }
+    }
+
+    function handlePointerLeave() {
+      isHovering = false;
+
+      // Smooth silky reset easing
+      card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease';
+      card.style.transform = 'translate3d(0px, 0px, 0) rotateX(0deg) rotateY(0deg)';
+
+      if (inner) {
+        inner.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        inner.style.transform = 'translate3d(0px, 0px, 0) scale(1)';
+      }
+    }
+
+    card.addEventListener('pointerenter', handlePointerEnter);
+    card.addEventListener('pointermove', handlePointerMove);
+    card.addEventListener('pointerleave', handlePointerLeave);
+  });
+}
+
+/* ==========================================================================
+   15. CURZR ARROW POINTER (DYNAMIC MINIMAL ARROW CURSOR)
+   Smooth Directional Trajectory Rotation & Fluid Lerp Tracking
+   ========================================================================== */
+class CurzrArrowPointer {
+  constructor() {
+    this.cursor = document.querySelector('.curzr-arrow');
+    if (!this.cursor) return;
+
+    this.position = {
+      distanceX: 0,
+      distanceY: 0,
+      pointerX: -100,
+      pointerY: -100,
+    };
+    this.previousPointerX = -100;
+    this.previousPointerY = -100;
+    this.angle = -135;
+    this.previousAngle = -135; // -135 + 90 = -45 deg (points top-left like classic arrow cursor at rest)
+    this.angleDisplace = 0;
+    this.degrees = 57.2957795;
+    this.cursorSize = 20;
+    this.isVisible = false;
+    this.isHovering = false;
+    this.isClicking = false;
+    this.innerSvg = this.cursor.querySelector('svg');
+
+    this.init();
+  }
+
+  init() {
+    const handleMove = (e) => {
+      if (typeof e.clientX !== 'number') return;
+      this.position.pointerX = e.clientX;
+      this.position.pointerY = e.clientY;
+
+      if (!this.isVisible) {
+        this.isVisible = true;
+        this.previousPointerX = e.clientX;
+        this.previousPointerY = e.clientY;
+      }
+      this.cursor.style.opacity = '1';
+    };
+
+    window.addEventListener('mousemove', handleMove, { passive: true });
+    document.addEventListener('mousemove', handleMove, { passive: true });
+    window.addEventListener('pointermove', handleMove, { passive: true });
+
+    window.addEventListener('mousedown', () => {
+      this.isClicking = true;
+      this.cursor.classList.add('curzr-click');
+    });
+
+    window.addEventListener('mouseup', () => {
+      this.isClicking = false;
+      this.cursor.classList.remove('curzr-click');
+    });
+
+    document.addEventListener('mouseleave', () => {
+      this.cursor.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      this.cursor.style.opacity = '1';
+    });
+
+    const interactiveSelector = 'a, button, [role="button"], input, textarea, select, .cert-card, .project-card, .tech-chip, .filter-btn, .hackathon-tag, .nav-link, .cert-tab-btn, [data-wobble="true"], .contact-social-logo-btn, .hero-social-circle-white, .btn-pill-cta, .hackathon-view-cert-btn, .hackathon-ghost-btn';
+
+    document.addEventListener('mouseover', (e) => {
+      if (e.target && e.target.closest && e.target.closest(interactiveSelector)) {
+        if (!this.isHovering) {
+          this.isHovering = true;
+          this.cursor.classList.add('curzr-hover');
+        }
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseout', (e) => {
+      if (e.target && e.target.closest && e.target.closest(interactiveSelector)) {
+        const related = e.relatedTarget;
+        if (!related || !related.closest || !related.closest(interactiveSelector)) {
+          this.isHovering = false;
+          this.cursor.classList.remove('curzr-hover');
+        }
+      }
+    }, { passive: true });
+
+    const loop = () => {
+      this.render();
+      requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+  }
+
+  render() {
+    if (!this.isVisible) return;
+
+    this.position.distanceX = this.position.pointerX - this.previousPointerX;
+    this.position.distanceY = this.position.pointerY - this.previousPointerY;
+
+    // Smooth movement interpolation (lerp)
+    this.previousPointerX += this.position.distanceX * 0.32;
+    this.previousPointerY += this.position.distanceY * 0.32;
+
+    this.cursor.style.transform = `translate3d(${(this.previousPointerX - this.cursorSize / 2).toFixed(2)}px, ${(this.previousPointerY - this.cursorSize / 2).toFixed(2)}px, 0)`;
+
+    // Calculate rotation angle based on movement trajectory
+    const moveDist = Math.hypot(this.position.distanceX, this.position.distanceY);
+    if (moveDist > 0.35) {
+      this.angle = Math.atan2(this.position.distanceY, this.position.distanceX) * this.degrees;
+      this.angleDisplace = this.angle - this.previousAngle;
+
+      if (this.angleDisplace < -180) this.angleDisplace += 360;
+      if (this.angleDisplace > 180) this.angleDisplace -= 360;
+
+      this.previousAngle += this.angleDisplace * 0.22;
+
+      if (this.innerSvg) {
+        this.innerSvg.style.transform = `rotate(${(this.previousAngle + 90).toFixed(2)}deg)${this.isClicking ? ' scale(0.88)' : (this.isHovering ? ' scale(1.12)' : '')}`;
+      }
+    } else if (this.innerSvg) {
+      this.innerSvg.style.transform = `rotate(${(this.previousAngle + 90).toFixed(2)}deg)${this.isClicking ? ' scale(0.88)' : (this.isHovering ? ' scale(1.12)' : '')}`;
+    }
+  }
+}

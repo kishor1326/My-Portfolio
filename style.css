@@ -3,6 +3,8 @@
    Author: Built for Kishor Kumar
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap');
+
 :root {
   /* Color Palette - Sleek Obsidian & Electric Accents */
   --bg-primary: #09090b;
@@ -31,8 +33,8 @@
   --gradient-accent: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
   --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
 
-  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Geist Sans', 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -178,6 +180,7 @@ button, input, textarea {
 .section {
   padding: 7rem 0 3rem;
   position: relative;
+  scroll-margin-top: 3.5rem;
 }
 
 .section-header {
@@ -235,7 +238,7 @@ button, input, textarea {
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 100;
+  z-index: 1000;
   pointer-events: none;
   padding: 0 1rem;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
@@ -368,13 +371,13 @@ button, input, textarea {
   font-size: 0.82rem;
   font-weight: 600;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 3px 10px rgba(99, 102, 241, 0.2);
   transition: all var(--transition-fast);
 }
 
 .btn-pill-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.55);
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.32);
   color: #ffffff;
 }
 
@@ -430,7 +433,7 @@ button, input, textarea {
   padding: 1.5rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
   display: none;
-  z-index: 99;
+  z-index: 1001;
   animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -684,19 +687,24 @@ button, input, textarea {
 .hero-split-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2.25rem;
+  gap: 0.85rem;
+  margin-bottom: 0;
   flex-wrap: wrap;
 }
 
 .btn-gradient-connect {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(135deg, #6366f1 0%, #7c3aed 55%, #8b5cf6 100%);
   color: #ffffff !important;
-  padding: 0.85rem 1.85rem;
+  height: 44px;
+  padding: 0 1.6rem;
   border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.45), 0 0 18px rgba(139, 92, 246, 0.3);
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 14px -3px rgba(99, 102, 241, 0.22), 0 0 8px rgba(139, 92, 246, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all var(--transition-fast);
 }
@@ -704,18 +712,23 @@ button, input, textarea {
 .btn-gradient-connect:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, #4f46e5 0%, #6d28d9 55%, #7c3aed 100%);
-  box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.65), 0 0 25px rgba(139, 92, 246, 0.45);
+  box-shadow: 0 8px 20px -3px rgba(99, 102, 241, 0.35), 0 0 14px rgba(139, 92, 246, 0.2);
   color: #ffffff !important;
 }
 
 .btn-ghost-work {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #f8fafc;
-  padding: 0.85rem 1.85rem;
+  height: 44px;
+  padding: 0 1.6rem;
   border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
   backdrop-filter: blur(12px);
   transition: all var(--transition-fast);
 }
@@ -728,30 +741,31 @@ button, input, textarea {
 }
 
 .hero-split-socials {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  margin-top: 0.25rem;
+  gap: 0.65rem;
+  margin-left: 0.2rem;
 }
 
 .hero-social-circle-white {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  display: flex;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   transition: all var(--transition-fast);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .hero-social-circle-white svg {
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 19px;
   fill: #ffffff;
   transition: all var(--transition-fast);
 }
@@ -760,7 +774,7 @@ button, input, textarea {
   transform: translateY(-3px) scale(1.08);
   background: #ffffff;
   border-color: #ffffff;
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.45), 0 0 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.18), 0 0 8px rgba(255, 255, 255, 0.1);
 }
 
 .hero-social-circle-white:hover svg {
@@ -2075,14 +2089,14 @@ button, input, textarea {
   background: #ffffff;
   border-color: #ffffff;
   color: #09090b;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.35), 0 0 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.18), 0 0 8px rgba(255, 255, 255, 0.1);
 }
 
 .contact-linkedin-btn:hover {
   background: #0a66c2;
   border-color: #0a66c2;
   color: #ffffff;
-  box-shadow: 0 8px 24px rgba(10, 102, 194, 0.45), 0 0 15px rgba(10, 102, 194, 0.3);
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.25), 0 0 8px rgba(10, 102, 194, 0.15);
 }
 
 /* Contact Form */
@@ -3138,10 +3152,6 @@ button, input, textarea {
     padding: 5rem 0 2rem;
   }
 
-  .hero-section {
-    padding: 6.5rem 0 4rem;
-  }
-
   .cert-specializations-grid {
     grid-template-columns: 1fr;
   }
@@ -3190,3 +3200,601 @@ button, input, textarea {
     left: -2rem;
   }
 }
+
+/* ==========================================================================
+   MY FIRST HACKATHON WIN SPOTLIGHT SECTION (MINIMAL REDESIGN)
+   ========================================================================== */
+.hackathon-win-section {
+  padding: 4rem 0 3.5rem;
+  position: relative;
+}
+
+.hackathon-win-card {
+  position: relative;
+  border-radius: 24px;
+  background: rgba(14, 16, 22, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 2.25rem 2.5rem;
+  overflow: hidden;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hackathon-win-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.hackathon-win-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2.75rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Column: Aceternity Wobble Card Photo Showcase */
+.hackathon-media-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Jelly Wobble Card Physics */
+.hackathon-wobble-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #090a10;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.7);
+  padding: 0;
+  aspect-ratio: 4 / 3;
+  will-change: transform;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hackathon-wobble-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 
+    0 24px 60px -12px rgba(0, 0, 0, 0.85),
+    0 0 30px -8px rgba(245, 158, 11, 0.2);
+}
+
+.hackathon-photo-frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.hackathon-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: inherit;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Caption Tag BELOW Photo */
+.hackathon-photo-footer {
+  margin-top: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0 0.25rem;
+}
+
+.hackathon-photo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: 0.01em;
+  transition: all var(--transition-fast);
+}
+
+.hackathon-photo-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.photo-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
+}
+
+.hackathon-photo-subhint {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Right Column: Content */
+.hackathon-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.hackathon-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.hackathon-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+}
+
+.pill-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f59e0b;
+}
+
+.hackathon-trophy-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #fbbf24;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.hackathon-heading {
+  font-size: clamp(1.65rem, 2.4vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.22;
+  margin-bottom: 0.35rem;
+  color: #ffffff;
+}
+
+.hackathon-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-bottom: 1.15rem;
+}
+
+.hackathon-desc {
+  font-size: 0.93rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.hackathon-desc strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Minimal Specs Grid */
+.hackathon-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.25rem;
+}
+
+.spec-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.spec-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #94a3b8;
+}
+
+.spec-val {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #f8fafc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Minimal Tags */
+.hackathon-tags-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.hackathon-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.24rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #cbd5e1;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all var(--transition-fast);
+}
+
+.hackathon-tag:hover {
+  background: rgba(139, 92, 246, 0.09);
+  color: #ffffff;
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+/* Minimal Action Buttons */
+.hackathon-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hackathon-view-cert-btn {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.48rem 1.15rem !important;
+  border-radius: var(--radius-full) !important;
+  background: #f8fafc !important;
+  color: #090a10 !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease !important;
+  cursor: pointer;
+}
+
+/* Minimal sleek light sweep across button surface */
+.hackathon-view-cert-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.75) 50%,
+    transparent 80%
+  );
+  transform: skewX(-20deg);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hackathon-view-cert-btn span,
+.hackathon-view-cert-btn svg {
+  position: relative;
+  z-index: 2;
+}
+
+.hackathon-view-cert-btn svg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke 0.25s ease !important;
+}
+
+/* Minimal Hover Animation */
+.hackathon-view-cert-btn:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px) scale(1.025) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28), 0 0 16px rgba(255, 255, 255, 0.45) !important;
+}
+
+.hackathon-view-cert-btn:hover::before {
+  transform: translateX(260%) skewX(-20deg);
+}
+
+.hackathon-view-cert-btn:hover svg {
+  transform: scale(1.15);
+  stroke: #2563eb;
+}
+
+/* Minimal tactile press on click / active */
+.hackathon-view-cert-btn:active {
+  transform: scale(0.94) translateY(1px) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35) !important;
+  transition: transform 0.08s ease, box-shadow 0.08s ease !important;
+}
+
+.hackathon-view-cert-btn:active svg {
+  transform: scale(0.9);
+  transition: transform 0.08s ease;
+}
+
+/* Minimal smooth bounce animation on click */
+.hackathon-view-cert-btn.btn-click-pulse {
+  animation: minimalCertClick 0.36s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes minimalCertClick {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.93) translateY(1px);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  }
+  65% {
+    transform: scale(1.025) translateY(-1px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.45);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  }
+}
+
+/* ==========================================================================
+   ACETERNITY UI HOVER BORDER GRADIENT BUTTON (VIEW PHOTO)
+   "A hover effect that expands to the entire container with a gradient border"
+   Reference: https://ui.aceternity.com/components/hover-border-gradient
+   ========================================================================== */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes borderBeamInfinity {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.hackathon-ghost-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.48rem 1.15rem;
+  border-radius: var(--radius-full);
+  color: #ffffff !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1;
+  border: 1.5px solid transparent;
+  background: 
+    padding-box linear-gradient(#000000, #000000),
+    border-box conic-gradient(
+      from var(--border-angle),
+      rgba(255, 255, 255, 0.1) 0deg,
+      rgba(255, 255, 255, 0.1) 250deg,
+      rgba(255, 255, 255, 0.4) 280deg,
+      #ffffff 330deg,
+      rgba(255, 255, 255, 0.85) 350deg,
+      rgba(255, 255, 255, 0.1) 360deg
+    );
+  animation: borderBeamInfinity 3.2s linear infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition: transform var(--transition-fast), box-shadow 0.3s ease;
+}
+
+/* Hover: expands to the entire container with a full vibrant gradient border */
+.hackathon-ghost-btn:hover {
+  transform: translateY(-1.5px);
+  background: 
+    padding-box linear-gradient(#000000, #000000),
+    border-box conic-gradient(
+      from var(--border-angle),
+      #3970ff 0deg,
+      #6366f1 60deg,
+      #38bdf8 120deg,
+      #ec4899 180deg,
+      #8b5cf6 240deg,
+      #38bdf8 300deg,
+      #3970ff 360deg
+    );
+  animation: borderBeamInfinity 1.8s linear infinite;
+  box-shadow: 
+    0 8px 25px -4px rgba(0, 0, 0, 0.9),
+    0 0 20px -2px rgba(57, 112, 255, 0.45);
+}
+
+.hackathon-ghost-btn svg {
+  position: relative;
+  z-index: 2;
+  stroke: #ffffff;
+  transition: transform var(--transition-fast);
+}
+
+.hackathon-ghost-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.hackathon-ghost-btn span {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .hackathon-win-card {
+    padding: 1.75rem;
+  }
+
+  .hackathon-win-layout {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .hackathon-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .hackathon-win-card {
+    padding: 1.25rem;
+    border-radius: 18px;
+  }
+
+  .hackathon-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hackathon-meta-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .hackathon-actions {
+    width: 100%;
+  }
+
+  .hackathon-view-cert-btn,
+  .hackathon-ghost-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   MINIMAL CURZR ARROW POINTER
+   Dynamic Directional Smooth Arrow Pointer Cursor
+   ========================================================================== */
+@media (hover: hover) and (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+.curzr-arrow {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  will-change: transform;
+}
+
+.curzr-arrow svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transition: transform 0.12s ease-out;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 8px rgba(139, 92, 246, 0.3));
+}
+
+.curzr-arrow svg .inner {
+  fill: #f8fafc;
+  transition: fill 0.22s ease;
+}
+
+.curzr-arrow svg .outer {
+  fill: #09090b;
+}
+
+/* Hovering interactive elements: Subtle scale & electric purple tint */
+.curzr-arrow.curzr-hover svg .inner {
+  fill: #a78bfa;
+}
+
+.curzr-arrow.curzr-hover svg {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 12px rgba(167, 139, 250, 0.5));
+}
+
+/* Clicking / Active: Quick tactile compression */
+.curzr-arrow.curzr-click svg {
+  transform: scale(0.88);
+}
+
+/* Hide on touch screens & restore native cursor */
+@media (hover: none) and (pointer: coarse) {
+  .curzr-arrow {
+    display: none !important;
+  }
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+}
+
